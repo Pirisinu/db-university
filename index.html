@@ -30,7 +30,7 @@
   <h1>ESERCIZIO QUERY CON JOIN</h1>
   <ol>
     <li>SELECT `students`.`name`,`students`.`surname`, `degrees`.`name` FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';</li>
-    <li></li>
+    <li>SELECT `degrees`.`name`, `departments`.* FROM `degrees` INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` WHERE `degrees`.`name` LIKE 'Corso di Laurea Magistrale%' AND `departments`.`name` = 'Dipartimento di Neuroscienze'; </li>
     <li></li>
     <li></li>
     <li></li>
