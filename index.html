@@ -33,7 +33,7 @@
     <li>SELECT `degrees`.`name`, `departments`.* FROM `degrees` INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` WHERE `degrees`.`name` LIKE 'Corso di Laurea Magistrale%' AND `departments`.`name` = 'Dipartimento di Neuroscienze'; </li>
     <li>SELECT `courses`.*, `teachers`.`name`, `teachers`.`surname` FROM `courses` INNER JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` INNER JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id` WHERE `teachers`.`name` = 'Fulvio' AND `teachers`.`surname` = 'Amato'; </li>
     <li>SELECT `students`.`surname` AS 'student_surname', `students`.`name` AS 'student_name', `degrees`.`name` AS 'degrees_name', `degrees`.`level` AS 'degrees_level', `departments`.`name` AS 'departments_name' FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` ORDER BY `students`.`surname`, `students`.`name`; </li>
-    <li></li>
+    <li>SELECT `degrees`.`name` AS 'degrees_name', `courses`.`id` AS 'courses_id', `courses`.`name` AS 'courses_name', `teachers`.`name` AS'teachers_name', `teachers`.`surname` AS 'teachers_surname' FROM `degrees` INNER JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id` INNER JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` INNER JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id`; </li>
     <li></li>
     <li></li>
   </ol>
