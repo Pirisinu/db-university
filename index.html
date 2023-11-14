@@ -31,7 +31,7 @@
   <ol>
     <li>SELECT `students`.`name`,`students`.`surname`, `degrees`.`name` FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';</li>
     <li>SELECT `degrees`.`name`, `departments`.* FROM `degrees` INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id` WHERE `degrees`.`name` LIKE 'Corso di Laurea Magistrale%' AND `departments`.`name` = 'Dipartimento di Neuroscienze'; </li>
-    <li></li>
+    <li>SELECT `courses`.*, `teachers`.`name`, `teachers`.`surname` FROM `courses` INNER JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` INNER JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id` WHERE `teachers`.`name` = 'Fulvio' AND `teachers`.`surname` = 'Amato'; </li>
     <li></li>
     <li></li>
     <li></li>
