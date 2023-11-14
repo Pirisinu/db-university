@@ -1,4 +1,4 @@
-# ESERCIZIO BASE
+# ESERCIZIO QUERY CON SELECT
 1. SELECT `name`,`surname`,`date_of_birth` FROM `students` WHERE YEAR(`date_of_birth`)=1990; 
 2. SELECT `name`,`cfu` FROM `courses` WHERE `cfu` > 10; 
 3. SELECT `name`,`surname`,`date_of_birth` FROM `students` WHERE DATE_SUB(CURDATE(), INTERVAL 30 YEAR) > `date_of_birth`;
@@ -8,8 +8,17 @@
 7. SELECT COUNT(id) AS 'numero_dipendenti' FROM `departments`; 
 8. SELECT `name`,`phone` FROM `teachers` WHERE `phone` IS NULL; 
 
-# BONUS
+# BONUS QUERY CON GROUP BY
 1. SELECT COUNT(ID) AS `number_of_students`, LEFT(`enrolment_date`, 4) AS `enrolment_year` FROM `students` GROUP BY `enrolment_year`; 
 2. SELECT COUNT(`office_address`) AS `office_counter`,`office_address` FROM `teachers` GROUP BY `office_address`; 
 3. SELECT `exam_id`,CEILING(AVG(`vote`)) AS 'media_dei_voti' FROM `exam_student` GROUP BY `exam_id`; 
 4. SELECT COUNT(ID) AS `degrees_count`,`department_id` FROM `degrees` GROUP BY `department_id`; 
+
+# ESERCIZIO QUERY CON JOIN
+1. SELECT `students`.`name`,`students`.`surname`, `degrees`.`name` FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia'; 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 

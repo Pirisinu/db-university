@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- ESERCIZIO QUERY CON SELECT -->
+  <h1>ESERCIZIO QUERY CON SELECT</h1>
+  <ol>
+    <li>SELECT `name`,`surname`,`date_of_birth` FROM `students` WHERE YEAR(`date_of_birth`)=1990;</li>
+    <li>SELECT `name`,`cfu` FROM `courses` WHERE `cfu` > 10;</li>
+    <li>SELECT `name`,`surname`,`date_of_birth` FROM `students` WHERE DATE_SUB(CURDATE(), INTERVAL 30 YEAR) > `date_of_birth`;</li>
+    <li>SELECT `name`, `period`, `year` FROM `courses` WHERE `year` = 1 AND `period` = 'I semestre';</li>
+    <li>SELECT `course_id`, `date`, `hour` FROM `exams` WHERE `date` = '2020-06-20' AND CAST(`hour` AS TIME) > '14:00';</li>
+    <li>SELECT `level` FROM `degrees` WHERE `level` = 'magistrale';</li>
+    <li>SELECT COUNT(id) AS 'numero_dipendenti' FROM `departments`;</li>
+    <li>SELECT `name`,`phone` FROM `teachers` WHERE `phone` IS NULL;</li>
+  </ol>
+  <!-- BONUS QUERY CON GROUP BY -->
+  <h1>BONUS QUERY CON GROUP BY</h1>
+  <ol>
+    <li>SELECT COUNT(ID) AS `number_of_students`, LEFT(`enrolment_date`, 4) AS `enrolment_year` FROM `students` GROUP BY `enrolment_year`;</li>
+    <li>SELECT COUNT(`office_address`) AS `office_counter`,`office_address` FROM `teachers` GROUP BY `office_address`;</li>
+    <li>SELECT `exam_id`,CEILING(AVG(`vote`)) AS 'media_dei_voti' FROM `exam_student` GROUP BY `exam_id`;</li>
+    <li>SELECT COUNT(ID) AS `degrees_count`,`department_id` FROM `degrees` GROUP BY `department_id`;</li>
+  </ol>
+  <!-- ESERCIZIO QUERY CON JOIN -->
+  <h1>ESERCIZIO QUERY CON JOIN</h1>
+  <ol>
+    <li>SELECT `students`.`name`,`students`.`surname`, `degrees`.`name` FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+</body>
+</html>
